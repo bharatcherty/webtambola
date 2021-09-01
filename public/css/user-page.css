@@ -1,0 +1,1330 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+/*HOME PAGE */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+
+/*  */
+
+:root {
+    /* Declaimer */
+    --declaimer-color: linear-gradient(to bottom right, rgb(0, 204, 255), rgb(0, 255, 128));
+    --accept-button: yellow;
+    --primary-color: #4C6DE5;
+    --secondary-color: #7F53AC;
+    /* page color */
+    --page-color: linear-gradient(#0A5D9F, hsl(207, 49%, 47%)) fixed;
+    --navbar-color: linear-gradient(#0a385e, #2d2f3b);
+    --navbar-button-color: #05FED1;
+    --navbar-text-color: black;
+    /* this is text color for navbar-button, ticket owner name and ticket number */
+    --name-text-color: white;
+    --name-background-color: var(--primary-color);
+    /* Ticket */
+    --ticket-border-color: #001665;
+    --active-button-color: red;
+    --button-color: #B9BBE2;
+    --button-text-color: #000000;
+    --ticket-container-border-radius: 5px;
+    --ticket-button-radius: 0px;
+    /* Upcoming numbers(cricle part) */
+    --upcoming-no-color: #C4C4C4;
+    --upcoming-no-text-color: black;
+    --upcoming-active-color: yellow;
+    --upcoming-active-text-color: red;
+    --upcoming-border-radius: 40px;
+    /*1-90 number book */
+    --called-no-color: var(--secondary-color);
+    --called-no-text: white;
+    /*clear and view button */
+    --clearView-btn-color: yellow;
+    --clearView-text-color: black;
+    --clearView-border-color: black;
+    /* Text Color of Enter Ticket Number to View */
+    --input-heading-color: #FFE608;
+    --input-btn-color: var(var(--secondary-color));
+    --input-border-radius: 10px;
+    /* width should be in percentage */
+    /* Ticket clear button */
+    --clear-btn-color: yellow;
+    --clear-btn-border: black;
+    --clear-btn-text-color: black;
+    /* Winnner */
+    --winner-color: #093363;
+    --winner-background-color: rgb(159, 181, 221, 0s);
+    /* Passed No */
+    --passed-no-backgroundcolor: rgb(159, 181, 221, 0s);
+    --passed-no-color: #C4C4C4;
+    --passed-no-text: black;
+    --passed-no-heading-color: white;
+    /* Agent Page */
+    --agent-list-button: rgb(24, 24, 78);
+    --agent-list-text-color: white;
+    --booking-agent-background: yellow;
+    --booking-agent-text-color: black;
+    --home-page-text-color: white;
+}
+
+.acceptBtn {
+    background: var(--accept-button);
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+    border: 0px solid grey;
+    border-radius: 20px;
+    padding: 9px 27px;
+    margin-top: 20px;
+}
+
+.noticeOverlayDiv {
+    position: fixed;
+    z-index: 5;
+    width: 120%;
+    height: 120%;
+    background: rgba(0, 0, 0, 0.8);
+    margin-left: -5%;
+    margin-top: -5%;
+}
+
+.infoDiv {
+    width: 50%;
+    margin-left: 20%;
+    font-size: 20px;
+    background: var(--declaimer-color);
+    text-align: center;
+    margin-top: 10%;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+
+/* Navbar */
+
+.bg-img {
+    background: var(--navbar-color);
+    background-size: cover;
+    min-height: 210px;
+    position: sticky;
+}
+
+.fireworks-container {
+    position: fixed;
+    z-index: 2;
+    pointer-events: none;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+.top-date {
+    float: right;
+    color: #ffffff;
+    font-family: sans-serif;
+    display: flex;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+.top-clock {
+    float: right;
+    color: #ffffff;
+    font-family: sans-serif;
+    display: flex;
+    margin-top: -0.1rem;
+    margin-right: 1rem;
+}
+
+.heading {
+    font-family: Raleway;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+}
+
+.heading h1 {
+    letter-spacing: 0.4rem;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #ffffff;
+    line-height: 3rem;
+    margin: 10px 0 6px;
+}
+
+.heading h1 span {
+    margin-bottom: 0.5rem;
+}
+
+.heading.sub-head {
+    text-align: center;
+    margin: 0 0 1px 0;
+}
+
+.container {
+    align-items: center;
+    text-align: center;
+    margin: auto auto auto;
+}
+
+.mybtn {
+    color: var(--navbar-text-color);
+    background: var(--navbar-button-color);
+    width: 14rem;
+    padding: 8px;
+    border-radius: 12px;
+    font-family: Raleway;
+    font-weight: 800;
+    border: none;
+    margin-left: 2%;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.mybtn:hover {
+    color: #03FFFF;
+    background-color: #001665;
+}
+
+.mytimer {
+    text-align: center;
+    color: #FBFBFB;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+/* Body Main Content */
+
+
+/* .main-body{
+     background: url(body-bg.jpg) no-repeat;
+     width: 100%;
+     height: auto;
+     
+     background-size: cover;
+ } */
+
+
+/* Ticket Lists */
+
+.ticketlist {
+    display: block;
+    margin: 5% 15vw;
+}
+
+.ticket-info {
+    display: flex;
+    align-items: center;
+}
+
+.ticket-no {
+    color: var(--name-text-color);
+    font-family: sans-serif;
+    font-weight: 600;
+    flex: 1 1 auto;
+}
+
+.tkt-head {
+    display: flex;
+}
+
+.name {
+    color: var(--name-text-color);
+    background: var(--name-background-color);
+    padding: 2px 10px;
+    height: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1%;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.grid-container {
+    border-radius: var(--ticket-container-border-radius);
+    display: grid;
+    margin-top: 1rem;
+    width: 100%;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    gap: 1vw;
+    background: var(--ticket-border-color);
+    padding: 1vw;
+}
+
+.grid-item {
+    background: var(--button-color);
+    border: none;
+    text-align: center;
+    border-radius: var(--ticket-button-radius);
+    font-size: 1.5rem;
+    height: 6.68vw;
+    font-family: sans-serif;
+    line-height: 6.68vw;
+    font-weight: bold;
+    width: 6.68vw;
+}
+
+.grid-item-selected {
+    background: var(--active-button-color);
+    border: none;
+    text-align: center;
+    border-radius: var(--ticket-button-radius);
+    font-size: 1.5rem;
+    height: 4rem;
+    font-family: sans-serif;
+    line-height: 4rem;
+    font-weight: bold;
+    width: 6.68vw;
+    cursor: pointer;
+}
+
+
+/* Booking Agent list page agentlist.html */
+
+.agents {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    margin-bottom: 4vw;
+}
+
+.a-list {
+    color: var(--booking-agent-text-color);
+    background-color: var(--booking-agent-background);
+    font-family: Raleway;
+    font-weight: 800;
+    padding: 3px;
+    font-size: 20px;
+    width: 21rem;
+    height: 4rem;
+    border: none;
+    border-radius: 10px;
+    margin: 0;
+    position: relative;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-bottom: 3%;
+    margin-top: 2%;
+}
+
+.agent-list {
+    margin: 0;
+    position: relative;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    width: 35%;
+    margin-top: 1%;
+    background: var(--agent-list-button);
+    color: var(--agent-list-text-color);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.agent-list button {
+    color: var(--agent-list-text-color);
+    background: var(--agent-list-button);
+    border: none;
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+
+/* WHATSAPP GROUP LINK PAGE */
+
+.main {
+    background-color: #EDFAF7;
+    width: 100%;
+    height: 100vh;
+}
+
+.link {
+    background-color: #EDFAF7;
+    border: none;
+    left: 50%;
+    right: 50%;
+    text-align: center;
+    color: #001665;
+    text-decoration: underline;
+    font-family: Raleway;
+    font-weight: 800;
+    padding: 1.3rem;
+    font-size: 20px;
+    width: 35%;
+    border: none;
+    border-radius: 10px;
+    margin-left: 32%;
+    margin-top: 1%;
+    letter-spacing: 1.5px;
+}
+
+.link-box {
+    background-color: #001665;
+    width: 45%;
+    height: 50%;
+    margin-left: 26.5%;
+    border-radius: 10px;
+}
+
+.link-box button {
+    width: 18rem;
+    height: 3rem;
+    border-radius: 10px;
+    margin: 15% 0 0 31%;
+    letter-spacing: 1.5px;
+    font-family: Raleway;
+    font-weight: 800;
+    border: none;
+}
+
+
+/* GAME IS LIVE  */
+
+.live-body {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.played-no {
+    display: flex;
+    margin-left: auto;
+    flex-wrap: wrap;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+.current {
+    color: var(--upcoming-active-text-color);
+    background: var(--upcoming-active-color);
+    border-radius: var(--upcoming-border-radius);
+    width: 45px;
+    font: 1em sans-serif;
+    font-weight: bold;
+    line-height: 32px;
+    height: 45px;
+    padding: 8px;
+    text-align: center;
+    margin-right: 1rem;
+}
+
+.last {
+    text-align: center;
+    border-radius: var(--upcoming-border-radius);
+    width: 45px;
+    font: 1em sans-serif;
+    font-weight: bold;
+    line-height: 32px;
+    height: 45px;
+    padding: 8px;
+    color: var(--upcoming-no-text-color);
+    background: var(--upcoming-no-color);
+    margin-right: 1rem;
+}
+
+.btns {
+    display: flex;
+    float: right;
+    margin-right: auto;
+}
+
+.btn-player {
+    width: 11rem;
+    height: 3rem;
+    background-color: #EAD302;
+    color: #000000;
+    border: none;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 2%;
+    display: flex;
+    padding: 1rem;
+    letter-spacing: 2px;
+    margin-right: 1%;
+    padding-left: 20px;
+}
+
+.btn-ticket {
+    width: 11rem;
+    height: 3rem;
+    background-color: #EAD302;
+    color: #000000;
+    border: none;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 2%;
+    display: flex;
+    padding: 1rem;
+    letter-spacing: 2px;
+}
+
+.tickets {
+    display: grid;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    margin-top: 2%;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.t-no {
+    background-color: var(--button-color);
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+
+.input {
+    background: var(--input-btn-color);
+    border-radius: var(--input-border-radius);
+}
+
+.t-no-selected {
+    background-color: #fe0505;
+    border: 2px solid #D6CE10;
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+
+.t-view {
+    display: block;
+    margin-top: 3%;
+}
+
+.t-content {
+    justify-content: center;
+    display: flex;
+}
+
+.t-view h2 {
+    color: var(--input-heading-color);
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.t-view button {
+    color: var(--clearView-text-color);
+    background: var(--clearView-btn-color);
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    border: var(--clearView-border-color) 2px solid;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 1% 2% 0 2%;
+    margin-top: 9px;
+}
+
+.t-view p {
+    width: 11rem;
+    height: 3rem;
+    padding: 3px;
+    border-radius: 10px;
+    border: none;
+    border: 1px solid #FF0808;
+    background: #FBFBFB;
+    line-height: 2.6rem;
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.t-view.t-no {
+    background: #05FED1;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    height: 2.5rem;
+    display: grid;
+    width: 50%;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.divident {
+    display: flex;
+    padding: 0% 7%;
+    flex-wrap: wrap;
+    background: var(--winner-background-color);
+}
+
+.divident-list {
+    display: flex;
+    justify-content: center;
+}
+
+.tkt-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.winner-name {
+    color: var(--name-text-color);
+    font-weight: 600;
+}
+
+.view-tkt {
+    font-weight: 600;
+    color: #D6CE10;
+    font: 1em sans-serif;
+    border: none;
+    background: transparent;
+    padding: 5px 12px;
+}
+
+.list-button {
+    flex: 1 0 40%;
+    /* explanation below */
+    margin: 5px;
+    color: #Ffffff;
+    padding: 10px;
+    background: var(--winner-color);
+    font-size: 1rem;
+    font-family: Raleway;
+    font-weight: 800;
+    text-align: center;
+    border: none;
+    margin: 1% 1% 1% 1%;
+    border-radius: 10px;
+}
+
+.divident-list button {
+    color: #Ffffff;
+    background: var(--winner-color);
+    width: 15rem;
+    height: 2.5rem;
+    font-size: 17px;
+    font-family: Raleway;
+    font-weight: 800;
+    border: none;
+    margin: 1% 1% 1% 1%;
+    border-radius: 10px;
+}
+
+.last-played-no {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.last-played-no button {
+    align-items: center;
+    width: 15rem;
+    height: 2rem;
+    background: #EAD302;
+    color: #000000;
+    border: none;
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 16px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+}
+
+.played-no {
+    display: flex;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.no {
+    margin: 2% 5% 0% 5%;
+    border: 2px solid #EAD302;
+    color: #000000;
+    font-size: 25px;
+    width: 4rem;
+    height: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    background: #9F9F9F;
+}
+
+
+/* View ticket list page */
+
+body {
+    background: var(--page-color);
+    background-size: cover;
+}
+
+.clear-btn {
+    display: flex;
+    justify-content: center;
+    color: var(--clear-btn-text-color);
+    background: var(--clear-btn-color);
+    border: var(--clear-btn-border) 2px solid;
+    width: 10rem;
+    padding: 6px;
+    height: 2rem;
+    border-radius: 10px;
+    font-size: 12px;
+    font-family: Raleway;
+    font-weight: 800;
+    margin-top: 3%;
+}
+
+.clear-btn:hover {
+    background: #FBFBFB;
+    color: #F30303;
+}
+
+#clear-btn:hover {
+    background: #FBFBFB;
+    color: #F30303;
+}
+
+.winner-ticket h2 {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    color: #000000;
+    background: #EAD302;
+    width: 30%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.win-ticket {
+    margin-bottom: 3%;
+}
+
+
+/* MOBILE VIEW FOR HOME.HTML */
+
+@media screen and (min-width: 1000px) {
+    .ticketlist {
+        display: block;
+        margin: 5% 15% 5% 15%;
+    }
+    .grid-container {
+        display: grid;
+        margin-top: 1rem;
+        width: 100%;
+        grid-template-columns: auto auto auto auto auto auto auto auto auto;
+        grid-gap: 10px;
+        background: var(--ticket-border-color);
+        padding: 10px;
+    }
+    .grid-item {
+        background: var(--button-color);
+        border: none;
+        text-align: center;
+        border-radius: var(--ticket-button-radius);
+        font-size: 1.4rem;
+        height: 6.68vw;
+        font-family: sans-serif;
+        line-height: 6.68vw;
+        font-weight: bold;
+        width: 6.68vw;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /*Home page home.html */
+    .noticeOverlayDiv {
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .infoDiv {
+        width: 85%;
+        margin: auto;
+        font-size: .8rem;
+        padding: 5px;
+        margin-top: 10%;
+    }
+    .acceptBtn {
+        font-size: .7rem;
+        padding: 4px 18px;
+    }
+    .bg-img {
+        background: var(--navbar-color);
+        max-width: 100%;
+        height: auto;
+    }
+    .top-date {
+        float: left;
+        font-size: 13px;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        line-height: 25px;
+    }
+    .top-clock {
+        float: right;
+        font-size: 13px;
+        display: flex;
+        margin-top: -0.1rem;
+        margin-right: 1rem;
+        line-height: 25px;
+    }
+    .heading {
+        font-size: 11px;
+    }
+    .mybtn {
+        color: #001665;
+        background: var(--navbar-button-color);
+        font-size: 2.5vw;
+        width: 39%;
+    }
+    .mybuttons {
+        display: flow-root;
+    }
+    .btn2 {
+        display: flex;
+        width: 14em;
+        font-size: 10px;
+        letter-spacing: 0px;
+    }
+    .ticketlist {
+        margin: 5% 3% 5% 3%;
+    }
+    .mytimer {
+        font-size: 0.7rem;
+        padding: 4px 4px;
+    }
+    .ticketlist p {
+        font-size: 12px;
+        margin-bottom: 2%;
+        margin-top: 2%;
+    }
+    .name {
+        height: 1.5em;
+        text-align: center;
+        line-height: 1em;
+    }
+    .grid-container {
+        width: 100%;
+        grid-gap: 2px;
+        padding: 5px;
+    }
+    .grid-item {
+        height: 9.3vw;
+        width: 9.3vw;
+        line-height: 9.3vw;
+        font-size: 1rem;
+    }
+    .t-view p {
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+    /* Booking agent Mobile View */
+    .agents {
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+    }
+    .a-list {
+        font-size: 17px;
+        height: 2.5em;
+        width: 15em;
+        text-align: center;
+        margin-right: 10px;
+    }
+    .agent-list {
+        width: 14rem;
+        height: 3.2rem;
+    }
+    .agent-list button {
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+    .agent-list.iconify {
+        font-size: 10px;
+    }
+}
+
+.fa-whatsapp {
+    color: #fff;
+    background: linear-gradient(#25d366, #25d366) 14% 84%/16% 16% no-repeat, radial-gradient(#25d366 58%, transparent 0);
+}
+
+
+/* Tablet VIEW FOR HOME PAGE  */
+
+@media screen and (min-width:481px) and (max-width:768px) {
+    .noticeOverlayDiv {
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .infoDiv {
+        width: 70%;
+        margin: auto;
+        font-size: 1.2rem;
+        padding: 10px;
+        margin-top: 10%;
+    }
+    .bg-img {
+        width: 100%;
+        height: auto;
+    }
+    .top-date {
+        float: left;
+        font-size: 17px;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    .top-clock {
+        float: right;
+        font-size: 17px;
+        display: flex;
+        margin-top: -0.1rem;
+        margin-right: 1rem;
+    }
+    .heading {
+        font-size: 17px;
+    }
+    .btn1 {
+        display: flex;
+        width: 14em;
+        font-size: 11px;
+        margin-right: 10px;
+        letter-spacing: 0px;
+    }
+    .btn2 {
+        display: flex;
+        width: 14em;
+        font-size: 11px;
+        margin-right: 10px;
+        letter-spacing: 0px;
+    }
+    .ticketlist p {
+        font-size: 12px;
+    }
+    .name {
+        height: 1.5em;
+        line-height: 1.2em;
+        text-align: center;
+        margin-bottom: 1%;
+    }
+    .grid-container {
+        width: 100%;
+        grid-gap: 2px;
+    }
+    .grid-item {
+        font-size: 1rem;
+        height: 6.68vw;
+        font-family: sans-serif;
+        line-height: 6.68vw;
+        font-weight: bold;
+        width: 6.68vw;
+    }
+    /* Booking agent TABLET View */
+    .agents {
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+    }
+    .a-list {
+        font-size: 17px;
+        height: 2.5em;
+        width: 17em;
+        text-align: center;
+        margin-right: 10px;
+    }
+    .agent-list {
+        width: 20rem;
+        height: 3.2rem;
+    }
+    .agent-list button {
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+    .agent-list.iconify {
+        font-size: 10px;
+    }
+}
+
+
+/* GAME IS LIVE MEDIA QUERY */
+
+
+/* MOBILE VIEW */
+
+@media screen and (max-width: 480px) {
+    .btn1 {
+        width: 7rem;
+        height: 1.7rem;
+        font-size: 8px;
+        font-weight: 900;
+    }
+    .btn2 {
+        width: 7rem;
+        height: 1.7rem;
+        font-size: 8px;
+        font-weight: 900;
+    }
+    .timer {
+        font-size: 10px;
+        margin-left: 3%;
+        margin-top: 2%;
+        text-align: center;
+    }
+    .live-body {
+        width: 100%;
+        height: auto;
+    }
+    .header {
+        flex-direction: column;
+    }
+    .played-no {
+        display: flex;
+        margin-left: auto;
+        flex-wrap: wrap;
+        margin-right: auto;
+        justify-content: right;
+    }
+    .current {
+        height: 25px;
+        width: 25px;
+        padding: 1px;
+        margin-right: 5px;
+        line-height: 25px;
+        font-size: .8em;
+    }
+    .last {
+        height: 25px;
+        width: 25px;
+        padding: 1px;
+        margin-right: 5px;
+        line-height: 25px;
+        font-size: .8em;
+    }
+    .btns {
+        display: flex;
+        padding: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btns span {
+        font-size: 12px;
+    }
+    .btn-player {
+        width: 9em;
+        height: 2.3em;
+        font-size: 10px;
+        padding: 3px;
+        letter-spacing: 2px;
+        margin-right: 5%;
+    }
+    .btn-ticket {
+        width: 9em;
+        height: 2.3em;
+        font-weight: 800;
+        font-size: 10px;
+        padding: 3px;
+        letter-spacing: 2px;
+    }
+    .tickets {
+        margin-top: 1%;
+        width: 96%;
+        grid-gap: 5px;
+        padding: 3px;
+    }
+    .t-no {
+        font-size: 12px;
+        height: 20px;
+        line-height: 20px;
+        height: auto;
+    }
+    .t-view {
+        flex-direction: column;
+    }
+    .t-view h2 {
+        font-size: 11px;
+        margin-bottom: 3%;
+    }
+    .t-view button {
+        width: 6rem;
+        height: 2rem;
+        font-size: 12px;
+        margin-top: 0;
+    }
+    .t-view p {
+        width: 8rem;
+        height: 2rem;
+    }
+    .divident {
+        padding: 0 2%;
+        width: 100%;
+        font-size: 0.7rem;
+    }
+    .list-button {
+        font-size: 0.8rem;
+        flex: 1 0 95%;
+    }
+    .divident-list {
+        display: flex;
+    }
+    .divident-list button {
+        width: 7rem;
+        height: 2rem;
+        font-size: 11px
+    }
+}
+
+
+/* TABLET VIEW OF GAME IS LIVE */
+
+@media screen and (min-width:481px) and (max-width:768px) {
+    .btn1 {
+        width: 7rem;
+        height: 1.7rem;
+        font-size: 8px;
+        font-weight: 900;
+    }
+    .btn2 {
+        width: 7rem;
+        height: 1.7rem;
+        font-size: 8px;
+        font-weight: 900;
+    }
+    .timer {
+        font-size: 8px;
+        margin-left: 3%;
+        margin-top: 2%;
+        text-align: center;
+    }
+    .live-body {
+        width: 100%;
+        height: auto;
+    }
+    .header {
+        flex-direction: column;
+    }
+    .played-no {
+        display: flex;
+        margin-left: auto;
+        flex-wrap: wrap;
+        margin-right: auto;
+        justify-content: right;
+    }
+    .current {
+        width: 30px;
+        height: 30px;
+        padding: 1px;
+        margin-right: 2px;
+    }
+    .last {
+        width: 30px;
+        height: 30px;
+        padding: 1px;
+        margin-right: 2px;
+    }
+    .btns {
+        display: flex;
+        padding: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btns span {
+        font-size: 12px;
+    }
+    .btn-player {
+        width: 9em;
+        height: 2.3em;
+        font-size: 10px;
+        padding: 3px;
+        letter-spacing: 2px;
+        margin-right: 5%;
+    }
+    .btn-ticket {
+        width: 9em;
+        height: 2.3em;
+        font-weight: 800;
+        font-size: 10px;
+        padding: 3px;
+        letter-spacing: 2px;
+    }
+    .tickets {
+        margin-top: 1%;
+        width: 90%;
+        grid-gap: 5px;
+        padding: 3px;
+    }
+    .t-no {
+        font-size: 20px;
+        height: auto;
+    }
+    .t-view {
+        flex-direction: column;
+    }
+    .t-view h2 {
+        font-size: 11px;
+        margin-bottom: 3%;
+    }
+    .t-view button {
+        width: 6rem;
+        height: 2rem;
+        font-size: 12px;
+    }
+    .t-view p {
+        width: 8rem;
+    }
+    .divident {
+        width: 100%;
+    }
+    .divident-list {
+        display: flex;
+    }
+    .divident-list button {
+        width: 7rem;
+        height: 2rem;
+        font-size: 11px
+    }
+}
+
+
+/* vIEW TICKET LIST PAGE MEDIA QUERY */
+
+
+/* MOBILE VIEW */
+
+@media screen and (max-width: 480px) {
+    .clear-btn {
+        width: 7rem;
+        padding: 1px;
+        height: 1.6rem;
+        align-items: center;
+    }
+    .winner-ticket h2 {
+        width: 60%;
+        font-size: 18px;
+        padding: 1px;
+    }
+    .divident-list button {
+        width: 20rem;
+        height: 2.7rem;
+        font-size: 12px;
+    }
+    .divident-list span {
+        display: block;
+        align-items: center;
+    }
+    .divident-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#winner_ticket_container {
+    margin-top: 4%;
+}
+
+
+/* TABLET VIEW OF VIEW TICKET LIST */
+
+@media screen and (min-width:481px) and (max-width:768px) {
+    .clear-btn {
+        width: 7rem;
+        padding: 1px;
+        height: 1.6rem;
+        align-items: center;
+    }
+    .winner-ticket h2 {
+        width: 60%;
+        font-size: 20px;
+        padding: 1px;
+    }
+    .divident-list button {
+        width: 20rem;
+        height: 2.7rem;
+        font-size: 12px;
+        padding: 2px;
+    }
+    .divident-list span {
+        display: block;
+        align-items: center;
+        font-size: 12px;
+    }
+    .divident-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.bottom {
+    margin-bottom: 10px;
+    margin: 5px;
+    background: var(--passed-no-color);
+    color: var(--passed-no-text);
+}
+
+.passed {
+    background: var(--passed-no-backgroundcolor);
+    justify-content: center;
+    text-align: center;
+    display: block;
+}
+
+.passed h1 {
+    padding-top: 20px;
+    color: var(--passed-no-heading-color);
+}
+
+.passed-no {
+    justify-content: center;
+}
+
+@media screen and (max-width:768px) {
+    .home-back {
+        display: none;
+        color: var(--home-page-text-color);
+    }
+}
